@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   devise_for :admins
 
   resources :admin
-  resources :organizer
   resources :sponsor
 
+  resources :organizers
   resources :projects
   
 

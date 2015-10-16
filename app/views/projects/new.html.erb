@@ -2,69 +2,70 @@
 <hr>
 
 
-<section id="project-setup-1" >
-
-  <h3>1. Who will be owner of this project?</h3>	
-  <fieldset class="form-inline">
-    <label class="sr-only" for="exampleInputEmail3">Project owner name</label>
-    <input type="email" class="form-control" id="project-owner-name" placeholder="Project owner name">
-
-    <label class="sr-only" for="exampleInputEmail3">Project owner email</label>
-    <input type="email" class="form-control" id="project-owner-email" placeholder="Project owner email">
-
-    <a href="#" class="btn btn-info" id="add-project-owner-btn">add</a>
-
-  </fieldset>
-
-  <hr>
-
-	<div class="input-group" style="width:508px; margin-top:10px">
-      <span class="form-control">fwe</span>
-      <span class="input-group-btn">
-        <button class="btn btn-secondary" type="button">x</button>
-      </span>
-    </div>
-
-</section>
-
-
 
 
 <hr>
 
-<section id="project-setup-2">
-	<h3>2. How will the project be called</h3>	
-	<%= form_for(:project, url: projects_path, remote: false, html: { class: "u" }) do |f| %>
+<section id="project-setup-1">
+	<h3>1. How will the project be called</h3>	
+	<h4 style="display:none">It will be called: <small></small></h4>	
+
+	<%= form_for(:project, url: projects_path, remote: true, html: { class: "" }) do |f| %>
 	  
-	  <fieldset class="form-group">
+	  <fieldset class="form-inline">
 	      <%= f.label "Project title", class:"sr-only" %>
 	      <%= f.text_field :title,class:"form-control", placeholder:"Project title" %>
+	      <button type="submit" class="btn btn-info">Create project</button>
 	  </fieldset>
 	  <hr>
 
-	  <button type="submit" class="btn btn-primary">Submit</button>
 	<% end %>
+</section>
+
+
+<hr>
+
+<section id="project-setup-2" >
+
+  <h3>2. Who will be owner of this project?</h3>	
+
+  	<% if @organizers.present? %>
+	    <ul class="list-group" style="width:300px">
+		    <% @organizers.each do |organizer| %>
+		      <li class="list-group-item"><%= organizer.name %> | <%= organizer.email %></li>
+		    <% end %>
+		</ul>
+		<hr>
+	<% end %>
+
+
+    <%= form_for(:organizer, url: organizers_path, remote: true, html: { class: "" }) do |f| %>
+
+	  <fieldset class="form-inline">
+
+	      <%= f.label "Project name", class:"sr-only" %>
+	      <%= f.text_field :name,class:"form-control", placeholder:"Project owner name" %>
+
+	      <%= f.label "Project email", class:"sr-only" %>
+	      <%= f.email_field :email,class:"form-control", placeholder:"Project owner email" %>
+
+	      <%= f.label "Project email", class:"sr-only" %>
+	      <%= f.password_field :password,class:"form-control", placeholder:"Project owner password" %>
+
+	      <%= f.submit "Add project organizer", class:"btn btn-info" %>
+
+	  </fieldset>
+
+   <% end %>
+
 </section>
 
 <script>
 	
-$(document).ready(function()
-{
-	var project_owners=[];
-
-	$("#add-project-owner-btn").click(function(){
-
-		project_owners.push({
-			name:$("#project-owner-name").val(),
-			email:$("#project-owner-email").val(),
-		})
-
-
-
-
-
-		return false;
-	})
-})
-
+	function createdName(title)
+	{
+		$("#project-setup-1 form").hide();
+		$("#project-setup-1 h4").show();
+		$("#project-setup-1 h4 small").text(title);
+	}
 </script>
