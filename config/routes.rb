@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  
+
+  root to: 'hq#index'
+
+  devise_for :organizers
+  devise_for :sponsors
+  devise_for :admins
+
+  resources :admin
+  resources :organizer
+  resources :sponsor
+
+  resources :project
+  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
