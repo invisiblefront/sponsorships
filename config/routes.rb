@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   
-
   root to: 'hq#index'
 
   devise_for :organizers
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   resources :organizer
   resources :sponsor
 
-  resources :project
+  resources :projects
   
 
   # The priority is based upon order of creation: first created -> highest priority.
