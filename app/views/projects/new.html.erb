@@ -2,68 +2,76 @@
 
 <hr>
 
-<section id="project-setup-1">
-	<h3>1. How will the sponsoring project be called</h3>	
-	<h4 style="display:none">It will be called: <small></small></h4>	
+<section id="project-setup-1" >
 
-	<%= form_for(:project, url: projects_path, remote: true, html: { class: "" }) do |f| %>
-	  
-	  <fieldset class="form-inline">
-	      <%= f.label "Project title", class:"sr-only" %>
-	      <%= f.text_field :title,class:"form-control", placeholder:"Project title" %>
-	      <button type="submit" class="btn btn-info">Confirm</button>
-	  </fieldset>
-	  <hr>
-
-	<% end %>
-</section>
-
-
-
-
-<section id="project-setup-2" >
-
-  <h3>2. Who will be owner of this project?</h3>	
+  <h3>1. Who will be owner of this project?</h3>	
 
   	<% if @organizers.present? %>
 	    <ul class="list-group" style="width:300px">
 		    <% @organizers.each do |organizer| %>
-		      <li class="list-group-item"><%= organizer.name %> | <%= organizer.email %></li>
+		      <li class="list-group-item">
+		      id: <span id="organizer_id"><%= organizer.id %></span><br>
+		      name: <span><%= organizer.name %></span><br>
+		      emails: <span><%= organizer.email %></span>
+		      </li>
 		    <% end %>
 		</ul>
-		<hr>
+		<br>
+	<% else %>
+	    <%= form_for(:organizer, url: organizers_path, remote: true, html: { class: "" }) do |f| %>
+
+		  <fieldset class="form-inline">
+
+		      <%= f.label "Project name", class:"sr-only" %>
+		      <%= f.text_field :name,class:"form-control", placeholder:"Project owner name" %>
+
+		      <%= f.label "Project email", class:"sr-only" %>
+		      <%= f.email_field :email,class:"form-control", placeholder:"Project owner email" %>
+
+		      <%= f.label "Project email", class:"sr-only" %>
+		      <%= f.password_field :password,class:"form-control", placeholder:"Project owner password" %>
+
+		      <%= f.submit "Add project organizer", class:"btn btn-info" %>
+
+		  </fieldset>
+
+	   <% end %>
 	<% end %>
-
-
-    <%= form_for(:organizer, url: organizers_path, remote: true, html: { class: "" }) do |f| %>
-
-	  <fieldset class="form-inline">
-
-	      <%= f.label "Project name", class:"sr-only" %>
-	      <%= f.text_field :name,class:"form-control", placeholder:"Project owner name" %>
-
-	      <%= f.label "Project email", class:"sr-only" %>
-	      <%= f.email_field :email,class:"form-control", placeholder:"Project owner email" %>
-
-	      <%= f.label "Project email", class:"sr-only" %>
-	      <%= f.password_field :password,class:"form-control", placeholder:"Project owner password" %>
-
-	      <%= f.submit "Add project organizer", class:"btn btn-info" %>
-
-	  </fieldset>
-
-   <% end %>
 
 </section>
 
+<% if @organizers.present? %>
+	<section id="project-setup-2">
+		<h3>2. How will the sponsoring project be called</h3>	
+		<h4 style="display:none">It will be called: <small></small></h4>	
+
+		<%= form_for(:project, url: projects_path, remote: false, html: { class: "" }) do |f| %>
+		  
+		  <fieldset class="form-inline">
+		      <%= f.label "Project title", class:"sr-only" %>
+		      <%= f.text_field :title,class:"form-control", placeholder:"Project title" %>
+		      <%= f.hidden_field :organizer_id,class:"form-control" %>
+		      <button type="submit" class="btn btn-info">Confirm</button>
+		  </fieldset>
+		  <hr>
+
+		<% end %>
+	</section>
+<% end %>
+
+
+
+
+
 <script>
+
+	$(document).ready(function(){
+		$("#project_organizer_id").val($("#organizer_id").text());
+	})
 	
 	function createdName(title)
 	{
 		$("#project-setup-1 form").hide();
-		$("#project-setup-1 h4").show();
-		$("#project-setup-1 h4 small").text(title);
-
 		$("#project-setup-2").show();
 	}
 

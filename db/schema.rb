@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(version: 20151020165208) do
   add_index "organizers", ["reset_password_token"], name: "index_organizers_on_reset_password_token", unique: true
 
   create_table "projects", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.integer  "project_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "title",        null: false
+    t.integer  "organizer_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "projects_users", id: false, force: :cascade do |t|

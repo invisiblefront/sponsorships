@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-
+    @projects=Project.all
   end
 
   def show
@@ -17,20 +17,8 @@ class ProjectsController < ApplicationController
 
     @project = Project.new(project_params)
 
-    # if @project.save!
-    #   respond_to do |format|
-    #     format.js { render :js => "createdName('"+project_params[:title]+"')" }
-    #   end
-    # else
-    #   respond_to do |format|
-    #     format.js { render :js => "alert('error')" }
-    #   end
-    # end
-
-    if project_params[:title].present?
-      respond_to do |format|
-        format.js { render :js => "createdName('"+project_params[:title]+"')" }
-      end
+    if @project.save!
+      redirect_to projects_path
     else
       respond_to do |format|
         format.js { render :js => "alert('error')" }
@@ -48,6 +36,6 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title)
+    params.require(:project).permit(:title, :organizer_id)
   end
 end

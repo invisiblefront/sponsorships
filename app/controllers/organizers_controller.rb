@@ -5,15 +5,15 @@ class OrganizersController < ApplicationController
 	def create 
 		@organizer = Organizer.new(organizer_params)
   		
-  # 		if @organizer.save!
-		#   respond_to do |format|
-		#     format.js { render :js => "createdName()" }
-		#   end
-		# else
-		#   respond_to do |format|
-		#     format.js { render :js => "alert('error')" }
-		#   end
-		# end
+  		if @organizer.save!
+		  respond_to do |format|
+		    format.js { render :js => "createdName()" }
+		  end
+		else
+		  respond_to do |format|
+		    format.js { render :js => "alert('error')" }
+		  end
+		end
 	end
 
 	def edit
