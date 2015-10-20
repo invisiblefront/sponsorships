@@ -4,7 +4,8 @@
 <% @projects.each do |project| %>
     <li>
     	title: <%= project.title %><br>
-    	created by: <%= project.organizer.name %>
+    	created by: <%= project.organizer.name %><br>
+    	orgainzer's email is: <%= project.organizer.email %>
     </li>
 <% end %>
 </ul>	

@@ -6,41 +6,40 @@
 
   <h3>1. Who will be owner of this project?</h3>	
 
-  	
+  		<% if params[:organizer_id].present? %>
 	    <ul class="list-group" style="width:300px">
 		   
 		      <li class="list-group-item">
-		      id: <span id="organizer_id"><%= @organizer_id %></span><br>
-		      name: <span id="organizer_name"><%= @organizer_name %></span><br>
-		      email: <span id="organizer_email"><%= @organizer_email %></span>
+		      id: <span id="param_organizer_id"><%= @organizer_id %></span><br>
+		      name: <span id="param_organizer_name"><%= @organizer_name %></span><br>
+		      email: <span id="param_organizer_email"><%= @organizer_email %></span>
 		      </li>
-		    
 		</ul>
-		<br>
+		<% else %>
+		    <%= form_for(:organizer, url: organizers_path, remote: false, html: { class: "" }) do |f| %>
 
-	    <%= form_for(:organizer, url: organizers_path, remote: false, html: { class: "" }) do |f| %>
+			  <fieldset class="form-inline">
 
-		  <fieldset class="form-inline">
+			      <%= f.label "Project name", class:"sr-only" %>
+			      <%= f.text_field :name,class:"form-control", placeholder:"Project owner name" %>
 
-		      <%= f.label "Project name", class:"sr-only" %>
-		      <%= f.text_field :name,class:"form-control", placeholder:"Project owner name" %>
+			      <%= f.label "Project email", class:"sr-only" %>
+			      <%= f.email_field :email,class:"form-control", placeholder:"Project owner email" %>
 
-		      <%= f.label "Project email", class:"sr-only" %>
-		      <%= f.email_field :email,class:"form-control", placeholder:"Project owner email" %>
+			      <%= f.label "Project email", class:"sr-only" %>
+			      <%= f.password_field :password,class:"form-control", placeholder:"Project owner password" %>
 
-		      <%= f.label "Project email", class:"sr-only" %>
-		      <%= f.password_field :password,class:"form-control", placeholder:"Project owner password" %>
+			      <%= f.submit "Add project organizer", class:"btn btn-info" %>
 
-		      <%= f.submit "Add project organizer", class:"btn btn-info" %>
+			  </fieldset>
 
-		  </fieldset>
-
+		   <% end %>
 	   <% end %>
-
 
 </section>
 
-<% if @organizers.present? %>
+<% if params[:organizer_id].present?  %>
+<br>
 	<section id="project-setup-2">
 		<h3>2. How will the sponsoring project be called</h3>	
 		<h4 style="display:none">It will be called: <small></small></h4>	
@@ -51,7 +50,7 @@
 		      <%= f.label "Project title", class:"sr-only" %>
 		      <%= f.text_field :title,class:"form-control", placeholder:"Project title" %>
 		      <%= f.hidden_field :organizer_id,class:"form-control" %>
-		      <button type="submit" class="btn btn-info">Confirm</button>
+		      <button type="submit" class="btn btn-info">Create project</button>
 		  </fieldset>
 		  <hr>
 
@@ -66,13 +65,11 @@
 <script>
 
 	$(document).ready(function(){
-		$("#project_organizer_id").val($("#organizer_id").text());
+
+		if($("#param_organizer_id").html()!=""){
+		 	$("#project_organizer_id").val($("#param_organizer_id").html());
+		}
 	})
-	
-	function createdName(title)
-	{
-		$("#project-setup-1 form").hide();
-		$("#project-setup-2").show();
-	}
+
 
 </script>

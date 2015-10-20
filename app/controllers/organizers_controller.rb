@@ -8,7 +8,7 @@ class OrganizersController < ApplicationController
   		if @organizer.save!
   			redirect_to :controller => 'projects', 
   			:action => 'new',
-  			:organizer_id => organizer_params[:id], 
+  			:organizer_id => @organizer.id, 
   			:organizer_name => organizer_params[:name],
   			:organizer_email => organizer_params[:email]
 		else
