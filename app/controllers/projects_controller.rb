@@ -7,7 +7,9 @@ class ProjectsController < ApplicationController
   end
 
   def new
-    @organizers=Organizer.all
+    @organizer_id=params[:organizer_id]
+    @organizer_name=params[:organizer_name]
+    @organizer_email=params[:organizer_email]
   end
 
   def edit
@@ -24,9 +26,6 @@ class ProjectsController < ApplicationController
         format.js { render :js => "alert('error')" }
       end
     end
-
-
-    
 
   end
 

@@ -6,9 +6,11 @@ class OrganizersController < ApplicationController
 		@organizer = Organizer.new(organizer_params)
   		
   		if @organizer.save!
-		  respond_to do |format|
-		    format.js { render :js => "createdName()" }
-		  end
+  			redirect_to :controller => 'projects', 
+  			:action => 'new',
+  			:organizer_id => organizer_params[:id], 
+  			:organizer_name => organizer_params[:name],
+  			:organizer_email => organizer_params[:email]
 		else
 		  respond_to do |format|
 		    format.js { render :js => "alert('error')" }

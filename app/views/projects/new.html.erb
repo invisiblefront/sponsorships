@@ -6,19 +6,19 @@
 
   <h3>1. Who will be owner of this project?</h3>	
 
-  	<% if @organizers.present? %>
+  	
 	    <ul class="list-group" style="width:300px">
-		    <% @organizers.each do |organizer| %>
+		   
 		      <li class="list-group-item">
-		      id: <span id="organizer_id"><%= organizer.id %></span><br>
-		      name: <span><%= organizer.name %></span><br>
-		      emails: <span><%= organizer.email %></span>
+		      id: <span id="organizer_id"><%= @organizer_id %></span><br>
+		      name: <span id="organizer_name"><%= @organizer_name %></span><br>
+		      email: <span id="organizer_email"><%= @organizer_email %></span>
 		      </li>
-		    <% end %>
+		    
 		</ul>
 		<br>
-	<% else %>
-	    <%= form_for(:organizer, url: organizers_path, remote: true, html: { class: "" }) do |f| %>
+
+	    <%= form_for(:organizer, url: organizers_path, remote: false, html: { class: "" }) do |f| %>
 
 		  <fieldset class="form-inline">
 
@@ -36,7 +36,7 @@
 		  </fieldset>
 
 	   <% end %>
-	<% end %>
+
 
 </section>
 
