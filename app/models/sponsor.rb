@@ -4,10 +4,9 @@ class Sponsor < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-         
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  belongs_to :project
+  has_and_belongs_to_many :projects
 
 end
