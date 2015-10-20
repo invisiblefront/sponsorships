@@ -1,13 +1,9 @@
 <h1>New project setup</h1>  
-<hr>
-
-
-
 
 <hr>
 
 <section id="project-setup-1">
-	<h3>1. How will the project be called</h3>	
+	<h3>1. How will the sponsoring project be called</h3>	
 	<h4 style="display:none">It will be called: <small></small></h4>	
 
 	<%= form_for(:project, url: projects_path, remote: true, html: { class: "" }) do |f| %>
@@ -15,7 +11,7 @@
 	  <fieldset class="form-inline">
 	      <%= f.label "Project title", class:"sr-only" %>
 	      <%= f.text_field :title,class:"form-control", placeholder:"Project title" %>
-	      <button type="submit" class="btn btn-info">Create project</button>
+	      <button type="submit" class="btn btn-info">Confirm</button>
 	  </fieldset>
 	  <hr>
 
@@ -23,7 +19,7 @@
 </section>
 
 
-<hr>
+
 
 <section id="project-setup-2" >
 
@@ -67,5 +63,8 @@
 		$("#project-setup-1 form").hide();
 		$("#project-setup-1 h4").show();
 		$("#project-setup-1 h4 small").text(title);
+
+		$("#project-setup-2").show();
 	}
+
 </script>

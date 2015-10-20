@@ -17,7 +17,17 @@ class ProjectsController < ApplicationController
 
     @project = Project.new(project_params)
 
-      if @project.save!
+    # if @project.save!
+    #   respond_to do |format|
+    #     format.js { render :js => "createdName('"+project_params[:title]+"')" }
+    #   end
+    # else
+    #   respond_to do |format|
+    #     format.js { render :js => "alert('error')" }
+    #   end
+    # end
+
+    if project_params[:title].present?
       respond_to do |format|
         format.js { render :js => "createdName('"+project_params[:title]+"')" }
       end
@@ -26,6 +36,9 @@ class ProjectsController < ApplicationController
         format.js { render :js => "alert('error')" }
       end
     end
+
+
+    
 
   end
 
