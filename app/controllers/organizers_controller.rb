@@ -1,5 +1,10 @@
 class OrganizersController < ApplicationController
 	def index
+		@organizers=Organizer.all
+	end
+
+	def show 
+		@organizer = Organizer.find_by(id: params[:id])
 	end
 
 	def create 

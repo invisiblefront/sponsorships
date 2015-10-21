@@ -1,0 +1,8 @@
+<h1>Organizers</h1>
+<ul class="list-group">
+<% @organizers.each do |organizer| %>
+	<li class="list-group-item">
+		<%= link_to organizer.name, organizer_path(organizer.id), class:"btn btn-info" %> 
+	</li>
+<% end %>
+<ul>

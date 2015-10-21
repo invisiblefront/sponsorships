@@ -1,8 +1,8 @@
 <h1>Projects</h1>
 
-<ul>
+<ul class="list-group">
 <% @projects.each do |project| %>
-    <li>
+    <li class="list-group-item">
     	title: <%= project.title %><br>
     	created by: <%= project.organizer.name %><br>
     	orgainzer's email is: <%= project.organizer.email %>
