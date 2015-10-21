@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root to: 'hq#index'
+  get 'hq' => 'hq#index'
 
   devise_for :organizers
   devise_for :sponsors
