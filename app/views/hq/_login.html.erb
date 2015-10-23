@@ -1,10 +1,16 @@
-<h2>Log in</h2>
+<%= form_for(:admin, :url => session_path(:admin), html:{class:"form-signin"}) do |f| %>
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <%= f.email_field :email, class:"form-control", placeholder:"Email address" %>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
 
-<%= form_for(:admin, :url => session_path(:admin)) do |f| %>
-  <%= f.text_field :email %>
-  <%= f.password_field :password %>
-  <%= f.check_box :remember_me %>
-  <%= f.label :remember_me %>
-  <%= f.submit 'Sign in' %>
+	<div class="checkbox">
+          <label>
+            <%= f.check_box :remember_me %> Remember me
+          </label>
+    </div>
+
+  <%= f.submit 'Sign in', class:"btn btn-lg btn-primary btn-block" %>
   <%= link_to "Forgot your password?", new_password_path(:admin) %>
 <% end %>
