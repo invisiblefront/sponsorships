@@ -48,3 +48,4 @@ end
 gem 'devise'
 gem 'react-rails', '~> 1.3.0'
 gem 'tzinfo-data'
+gem 'bcrypt-ruby', '3.1.1.rc1', :require => 'bcrypt'

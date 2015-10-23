@@ -1,3 +1,5 @@
-<hr>
-
-<%= link_to "setup new project", new_project_path, class:"btn btn-primary" %>
+<% if admin_signed_in? %>
+	<%= link_to "setup new project", new_project_path, class:"btn btn-primary" %>
+<% else %>
+	<%= render partial: "login" %>
+<% end %>
