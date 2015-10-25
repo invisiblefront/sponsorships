@@ -1,8 +1,19 @@
 <h1>Organizers</h1>
+<% if @organizers.present? %>
 <ul class="list-group">
 <% @organizers.each do |organizer| %>
+	<% if organizer.project.present? %>
 	<li class="list-group-item">
-		<%= link_to organizer.name, organizer_path(organizer.id), class:"btn btn-info" %> 
+		<%= link_to organizer.name, organizer_path(organizer.id), class:"btn btn-primary" %> 
+		owns
+		<%= link_to organizer.project.title, project_path(organizer.project.id), class:"btn btn-info" %> 
+		<%= link_to "destroy", organizer_path(organizer.id), method: :delete, class:"btn btn-danger pull-right" %> 
 	</li>
+	<% end %>
 <% end %>
 <ul>
+<% else %>
+<div class="alert alert-info" role="alert">
+	<strong>No organizers created</strong>
+</div>
+<% end %>

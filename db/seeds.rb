@@ -7,5 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-admin = Admin.create(email: 'alex@mail.com', password:"trojan123", password_confirmation:"trojan123")
+admin = Admin.create(name:"alex",  email: 'alex@mail.com', password:"trojan123", password_confirmation:"trojan123")
 admin.save!

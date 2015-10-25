@@ -26,6 +26,13 @@ class OrganizersController < ApplicationController
 	def edit
 	end
 
+	def destroy
+	    @organizer = Organizer.find(params[:id])
+	    @organizer.destroy
+	   
+	    redirect_to organizers_path
+	end
+
 
 private
   def organizer_params
