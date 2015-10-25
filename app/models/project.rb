@@ -4,6 +4,6 @@ class Project < ActiveRecord::Base
 	
 	has_and_belongs_to_many :sponsors
 	
-	belongs_to :organizer
+	belongs_to :organizer, depedent :destroy
 	
 end

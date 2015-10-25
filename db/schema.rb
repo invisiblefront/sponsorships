@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(version: 20151020165208) do
 
   create_table "admins", force: :cascade do |t|
+    t.string   "name",                                null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
@@ -57,12 +58,12 @@ ActiveRecord::Schema.define(version: 20151020165208) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "projects_users", id: false, force: :cascade do |t|
+  create_table "projects_sponsors", id: false, force: :cascade do |t|
     t.integer "project_id"
     t.integer "sponsor_id"
   end
 
-  add_index "projects_users", ["project_id", "sponsor_id"], name: "index_projects_users_on_project_id_and_sponsor_id"
+  add_index "projects_sponsors", ["project_id", "sponsor_id"], name: "index_projects_sponsors_on_project_id_and_sponsor_id"
 
   create_table "sponsors", force: :cascade do |t|
     t.datetime "created_at",                          null: false

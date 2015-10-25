@@ -1,15 +1,15 @@
 class CreateProjectsSponsorsJoinTable < ActiveRecord::Migration
   def self.up
-    create_table :projects_users, :id => false do |t|
+    create_table :projects_sponsors, :id => false do |t|
       t.integer :project_id
       t.integer :sponsor_id
     end
 
-    add_index :projects_users, [:project_id, :sponsor_id]
+    add_index :projects_sponsors, [:project_id, :sponsor_id]
   end
 
   def self.down
-    drop_table :projects_users
+    drop_table :projects_sponsors
   end
 end
 
