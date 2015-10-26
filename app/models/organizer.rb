@@ -4,6 +4,6 @@ class Organizer < ActiveRecord::Base
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :project, depedent :destroy
+  has_one :project, dependent: :destroy
          
 end

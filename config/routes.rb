@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  
+
+  root 'frontpage#index'
+
   get 'hq' => 'hq#index'
 
   devise_for :organizers
@@ -12,6 +14,15 @@ Rails.application.routes.draw do
   resources :organizers
   resources :projects
   
+
+authenticated :admin do
+  root to: 'hq#index', as: :authenticated_root
+end
+
+
+
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
