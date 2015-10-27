@@ -16,7 +16,7 @@
 		      </li>
 		</ul>
 		<% else %>
-		    <%= form_for(:organizer, url: organizers_path, remote: false, html: { class: "" }) do |f| %>
+		    <%= form_for(:organizer, url: hq_organizers_path, remote: false, html: { class: "" }) do |f| %>
 
 			  <fieldset class="form-inline">
 
@@ -44,7 +44,7 @@
 		<h3>2. How will the sponsoring project be called</h3>	
 		<h4 style="display:none">It will be called: <small></small></h4>	
 
-		<%= form_for(:project, url: projects_path, remote: false, html: { class: "" }) do |f| %>
+		<%= form_for(:project, url: hq_projects_path, remote: false, html: { class: "" }) do |f| %>
 		  
 		  <fieldset class="form-inline">
 		      <%= f.label "Project title", class:"sr-only" %>

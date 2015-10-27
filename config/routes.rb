@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'frontpage#index'
 
   get 'hq' => 'hq#index'
@@ -9,16 +10,18 @@ Rails.application.routes.draw do
   devise_for :admins
 
   resources :admin
-  resources :sponsor
 
-  resources :organizers
-  resources :projects
-  
 
-authenticated :admin do
-  root to: 'hq#index', as: :authenticated_root
-end
+ # authenticated :admin do
+ #   root to: 'hq#index', as: :authenticated_root
+ # end
 
+  namespace :hq do
+    resources :dashboard, only: [:index]
+    resources :organizers, only: [:index, :show, :create, :destroy]
+    resources :projects, only: [:index, :show, :new, :create, :destroy]
+    resources :sponsor, only: [:index, :show]
+  end
 
 
 
