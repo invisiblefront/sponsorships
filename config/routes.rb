@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'frontpage#index'
 
-  get 'hq' => 'hq#index'
+  
 
   devise_for :organizers
   devise_for :sponsors
@@ -16,6 +16,7 @@ Rails.application.routes.draw do
  #   root to: 'hq#index', as: :authenticated_root
  # end
 
+  get 'hq' => 'hq#index'
   namespace :hq do
     resources :dashboard, only: [:index]
     resources :organizers, only: [:index, :show, :create, :destroy]
@@ -23,7 +24,11 @@ Rails.application.routes.draw do
     resources :sponsor, only: [:index, :show]
   end
 
-
+  get 'organizer' => 'organizer#index'
+  namespace :organizer do
+    resources :dashboard, only: [:index]
+    resources :projects, only: [:index, :show, :edit]
+  end
 
 
 

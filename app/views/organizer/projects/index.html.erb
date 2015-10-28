@@ -10,8 +10,9 @@
 					<%= link_to project.organizer.name, hq_organizer_path(project.organizer.id), class:"btn btn-primary" %> 
 				</div>
 				<div class="col-md-3">
-					<%= button_to('Destroy', hq_project_path(project.id), method: "delete", remote: false, class:"btn btn-danger pull-right", data: { confirm: 'Are you sure?', disable_with: 'loading...' }) %>
-					<%= link_to "view", hq_project_path(project.id), class:"btn btn-info pull-left" %>
+					you can 
+					<%= link_to "delete", hq_project_path(project.id),method: :delete, class:"btn btn-sm btn-danger" %>
+					<%= link_to "view", hq_project_path(project.id), class:"btn btn-sm btn-info" %>
 				</div>
 			</div>
 		</li>

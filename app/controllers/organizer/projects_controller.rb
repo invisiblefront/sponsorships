@@ -1,4 +1,4 @@
-module Hq
+module Organizer
   class ProjectsController < ApplicationController
     def index
       @projects=Project.all
@@ -34,7 +34,7 @@ module Hq
       @project = Project.find(params[:id])
       @project.destroy
      
-      redirect_to hq_path
+      redirect_to hq_projects_path
     end
 
 

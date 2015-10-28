@@ -12,7 +12,7 @@ module Hq
 			@organizer = Organizer.new(organizer_params)
 	  		
 	  		if @organizer.save!
-	  			redirect_to :controller => 'projects', 
+	  			redirect_to :controller => 'hq/projects', 
 	  			:action => 'new',
 	  			:organizer_id => @organizer.id, 
 	  			:organizer_name => organizer_params[:name],
@@ -37,7 +37,7 @@ module Hq
 
 	private
 	  def organizer_params
-	    params.require(:organizer).permit(:name, :email)
+	    params.require(:organizer).permit(:name, :email, :password)
 	  end
 
 	end

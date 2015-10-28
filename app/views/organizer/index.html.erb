@@ -1,0 +1,5 @@
+<% if organizer_signed_in? %>
+	<%= render partial: "organizer/dashboard/overview" %>
+<% else %>
+	<%= render partial: "organizer/dashboard/login" %>
+<% end %>
