@@ -1,5 +1,7 @@
 <h1><%= @my_project.title %></h1>
 
+<%= link_to "delete all media",  organizers_delete_assets_path, method: :delete, class:"btn btn-danger"  %>
+
 <ul>
 	<%= @my_media.each do |media_asset| %>
 		<li>

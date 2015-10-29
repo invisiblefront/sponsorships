@@ -23,6 +23,11 @@ module Organizers
       end 
     end
 
+    def delete_all_assets
+      ProjectAsset.where(:project_id => current_organizer.project.id).delete_all
+      redirect_to organizers_project_path(current_organizer.project.id)
+    end
+
     private
     def project_asset_params
       params.require(:project_asset).permit(:project_id, :media_type, :media)

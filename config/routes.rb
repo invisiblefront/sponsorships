@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   namespace :organizers do
     resources :dashboard, only: [:index]
     resources :projects, only: [:index, :show, :edit]
+
     post 'project_asset' => 'projects#create_asset'
+    delete 'delete_assets' => 'projects#delete_all_assets'
   end
 
 

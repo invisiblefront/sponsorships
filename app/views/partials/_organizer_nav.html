@@ -1,12 +1,12 @@
 <nav class="navbar navbar-light bg-faded">
-  <a class="navbar-brand" href="#">Yellowings</a>
+  <%= link_to "Yellowings", organizer_path, class:"navbar-brand" %>
   <ul class="nav navbar-nav">
     <li class="nav-item">
       <a class="nav-link" href="#">Profile</a>
       
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Projects</a>
+      <%= link_to "Project", organizers_project_path(current_organizer.id), class:"nav-link" %>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">Sponsors</a>
