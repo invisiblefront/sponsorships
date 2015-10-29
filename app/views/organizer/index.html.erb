@@ -1,5 +1,50 @@
 <% if organizer_signed_in? %>
-	<%= render partial: "organizer/dashboard/overview" %>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card text-center">
+			  <div class="card-header">
+			  	<h4 class="card-title">Hi, <%= current_organizer.name %></h4>
+			  </div>
+			  <div class="card-block">
+			    <p class="card-text">Change your profile info</p>
+			    <a href="#" class="btn btn-primary">Start</a>
+			  </div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card text-center">
+			  <div class="card-header">
+			  	<h4 class="card-title"><%= @my_project.title %></h4>
+			  </div>
+			  <div class="card-block">
+			    <p class="card-text">View and edit your sponsoring project</p>
+			    <a href="#" class="btn btn-info">View</a>
+			    <a href="#" class="btn btn-info">Edit</a>
+
+
+			    <%= link_to "View", organizer_project_path(current_organizer.project.id) %>
+			  </div>
+<!-- 			  <div class="card-footer text-muted">
+			    Created at: <%= @my_project.created_at.strftime("%d %b. %Y") %>
+			  </div> -->
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card text-center">
+			  <div class="card-header">
+			  	<h4 class="card-title">My sponsors</h4>
+			  </div>
+			  <div class="card-block">
+			    <p class="card-text">Check out who is baking you</p>
+			    <a href="#" class="btn btn-warning">Start</a>
+			  </div>
+			</div>
+		</div>
+
+	</div>
+	
+
+
 <% else %>
 	<%= render partial: "organizer/dashboard/login" %>
 <% end %>

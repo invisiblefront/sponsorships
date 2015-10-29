@@ -11,8 +11,15 @@
 
 	    <% if admin_signed_in? %>
 	    	<%= render partial:"partials/hq_nav" %>
+	    	<br>
 	    <% end %>
-	    <br>
+	    
+
+	   	<% if organizer_signed_in? %>
+	    	<%= render partial:"partials/organizer_nav" %>
+	    	<br>
+	    <% end %>
+	    
 
 	    <%= render partial:"partials/device_notifications" %>
 	    
