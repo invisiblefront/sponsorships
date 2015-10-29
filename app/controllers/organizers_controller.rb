@@ -1,4 +1,4 @@
-class OrganizerController < ApplicationController
+class OrganizersController < ApplicationController
 	  
 	def index
 		if organizer_signed_in?

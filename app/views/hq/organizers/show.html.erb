@@ -1,1 +1,51 @@
-<h1>Hi, <%= @organizer.name %></h1>
+<div class="card hq-organizer-profile-card">
+  <div class="card-header">
+    <div class="organizer-icon">
+    	<i class="fa fa-user"></i>
+    </div>
+    <h3 class="text-center"><%= @organizer.name %></h3>	
+  </div>
+  <div class="card-block">
+
+	<ul class="nav nav-tabs" role="tablist">
+	  <li class="nav-item">
+	    <a class="nav-link active" href="#project" role="tab" data-toggle="tab">Project</a>
+	  </li>
+	  <li class="nav-item">
+	    <a class="nav-link" href="#contact" role="tab" data-toggle="tab">Contact</a>
+	  </li>
+	</ul>
+
+	<div class="tab-content">
+	  <div role="tabpanel" class="tab-pane active" id="project">
+	  	<table class="table table-responsive">
+	  		<tbody>
+	  			<tr>
+	  				<td>Id:</td>
+	  				<td><%= @organizer.project.id %></td>
+	  			</tr>
+	  			<tr>
+	  				<td>Title:</td>
+	  				<td><%= @organizer.project.title %></td>
+	  			</tr>
+	  		</tbody>
+	  	</table>
+	  </div>
+	  <div role="tabpanel" class="tab-pane" id="contact">
+	  	<table class="table table-responsive">
+	  		<tbody>
+	  			<tr>
+	  				<td>Name:</td>
+	  				<td><%= @organizer.name %></td>
+	  			</tr>
+	  			<tr>
+	  				<td>Email:</td>
+	  				<td><%= @organizer.email %></td>
+	  			</tr>
+	  		</tbody>
+	  	</table>
+	  </div>
+	</div>
+
+  </div>
+</div>

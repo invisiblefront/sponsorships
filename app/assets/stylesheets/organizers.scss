@@ -1,3 +1,27 @@
-// Place all the styles related to the organizers controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.hq-organizer-profile-card
+{
+	.organizer-icon
+	{
+		width:100px;
+		height:100px;
+		background-color:#ccc;
+
+		border-radius:50%;
+		margin:0 auto;
+		margin-bottom:10px;
+
+		text-align:center;
+
+		i 
+		{
+			font-size: 4rem;
+			line-height: 6rem
+		}
+	}
+
+	h3 
+	{
+		text-transform: capitalize
+	}
+}
+

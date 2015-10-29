@@ -24,10 +24,11 @@ Rails.application.routes.draw do
     resources :sponsor, only: [:index, :show]
   end
 
-  get 'organizer' => 'organizer#index'
-  namespace :organizer do
+  get 'organizer' => 'organizers#index'
+  namespace :organizers do
     resources :dashboard, only: [:index]
     resources :projects, only: [:index, :show, :edit]
+    post 'project_asset' => 'projects#create_asset'
   end
 
 

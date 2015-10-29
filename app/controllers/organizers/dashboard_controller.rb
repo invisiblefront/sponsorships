@@ -1,4 +1,4 @@
-module Organizer
+module Organizers
 class DashboardController < ApplicationController
 	  
 	def index
