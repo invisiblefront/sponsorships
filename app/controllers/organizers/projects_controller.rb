@@ -3,7 +3,7 @@ module Organizers
     def index
       @projects=Project.all
     end
-
+alexkhalevine.dev.rhcloud.com
     def show
       @my_project = Project.find(params[:id])
       @my_media = ProjectAsset.where(project_id:params[:id])
