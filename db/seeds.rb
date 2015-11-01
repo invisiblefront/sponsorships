@@ -9,3 +9,9 @@
 
 admin = Admin.create(name:"alex",  email: 'alex@mail.com', password:"trojan123", password_confirmation:"trojan123")
 admin.save!
+
+organizer = Organizer.create(name:"peter",  email: 'p@mail.com', password:"trojan123", password_confirmation:"trojan123")
+organizer.save!
+
+project = Project.create(title:"First project of peter",  organizer_id: '1')
+project.save!

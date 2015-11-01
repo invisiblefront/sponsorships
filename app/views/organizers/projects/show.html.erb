@@ -1,11 +1,30 @@
 <h1><%= @my_project.title %></h1>
+<%= link_to "Add Media",  edit_organizers_project_path(current_organizer.project.id), class:"btn btn-warning" %>
 
-<%= link_to "delete all media",  organizers_delete_assets_path, method: :delete, class:"btn btn-danger"  %>
+<% if @my_project.project_assets.size>0 %>
+<%= link_to "Delete All Assets",  organizers_delete_assets_path, method: :delete, class:"btn btn-danger"  %>
+<% end %>
 
-<ul>
-	<%= @my_media.each do |media_asset| %>
-		<li>
-			<%= media_asset %>
-		</li>
+<hr>
+
+
+
+
+<ul class="list-group">
+	<% @my_project.project_assets.each do |media_asset| %>
+	  <li class="list-group-item row">
+	  	<div class="col-md-4">
+	  		<%= image_tag(media_asset.media, height: '100', width: '100', class:"pull-left") %>
+	  	</div>
+	  	<div class="col-md-4">
+	  		<%= media_asset.media %>
+	  	</div>
+	  	<div class="col-md-4">
+	  		<%= link_to "View Full Sized",  organizers_path(media_asset), method: :delete, class:"btn btn-info"  %>
+	  		<%= link_to "Delete This Asset",  organizers_path(media_asset), method: :delete, class:"btn btn-danger"  %>
+
+	  	</div>
+
+	  </li>
 	<% end %>
 </ul>

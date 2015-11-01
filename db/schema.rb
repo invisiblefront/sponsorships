@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151029133543) do
 
   create_table "project_assets", force: :cascade do |t|
     t.integer  "project_id", limit: 4
+    t.string   "title",      limit: 255
     t.string   "media_type", limit: 255
     t.string   "media",      limit: 255
     t.datetime "created_at",             null: false

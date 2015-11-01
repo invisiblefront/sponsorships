@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     resources :projects, only: [:index, :show, :edit]
 
     post 'project_asset' => 'projects#create_asset'
+
+    delete '/delete_asset/:id' =>  'projects#delete_asset'
     delete 'delete_assets' => 'projects#delete_all_assets'
   end
 

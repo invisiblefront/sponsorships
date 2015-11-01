@@ -6,7 +6,6 @@ module Organizers
 
     def show
       @my_project = Project.find(params[:id])
-      @my_media = ProjectAsset.where(project_id:params[:id])
     end
 
     def edit
@@ -21,6 +20,12 @@ module Organizers
       else
         render plain: "error"
       end 
+    end
+
+    def delete_asset
+      @target_asset=ProjectAsset.find(params[:id])
+      @target_asset.destroy
+      redirect_to organizers_project_path(current_organizer.project.id)
     end
 
     def delete_all_assets
