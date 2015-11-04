@@ -16,3 +16,4 @@
 //= require_tree .
 
 //= require bootstrap4/bootstrap
+//= require lightbox

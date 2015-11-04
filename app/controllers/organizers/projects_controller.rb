@@ -35,7 +35,7 @@ module Organizers
 
     private
     def project_asset_params
-      params.require(:project_asset).permit(:project_id, :media_type, :media)
+      params.require(:project_asset).permit(:project_id, :title, :media_type, :media)
     end
   end
 end

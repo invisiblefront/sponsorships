@@ -1,0 +1,424 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"form-",
+				"form-control"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"font",
+				"font-size"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/views/organizers/projects/edit.html.erb",
+			"settings":
+			{
+				"buffer_size": 892,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/views/organizers/projects/show.html.erb",
+			"settings":
+			{
+				"buffer_size": 1032,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/controllers/organizers/projects_controller.rb",
+			"settings":
+			{
+				"buffer_size": 1001,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/alex/Google Drive/yellowings/dev",
+		"/C/Users/alex/Google Drive/yellowings/dev/app",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizers",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects",
+		"/C/Users/alex/Google Drive/yellowings/dev/db",
+		"/C/Users/alex/Google Drive/yellowings/dev/db/migrate"
+	],
+	"file_history":
+	[
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/assets/stylesheets/application.scss",
+		"/C/Users/alex/Google Drive/yellowings/dev/config/initializers/assets.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/Gemfile",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects/show.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/assets/javascripts/application.js",
+		"/C/Users/alex/Google Drive/yellowings/dev/db/migrate/20151029133543_create_project_assets.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/db/schema.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/config/routes.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizers/projects_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/db/seeds.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/config/environments/production.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/config/secrets.yml",
+		"/C/Users/alex/Google Drive/yellowings/dev/config/initializers/devise.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/config/environment.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/config/database.yml",
+		"/C/Users/alex/Google Drive/yellowings/dev/test/test_helper.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/config.ru",
+		"/C/Users/alex/Google Drive/yellowings/dev/.gitignore",
+		"/C/Users/alex/Google Drive/yellowings/dev/openshift",
+		"/C/Users/alex/.ssh/id_rsa.pub",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/partials/_organizer_nav.html",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects/edit.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects/index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/models/project_asset.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/models/project.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/frontpage/index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/vendor/assets/stylesheets/bootstrap4/_variables.scss",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizers_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizer/index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizers/dashboard_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/assets/stylesheets/organizers.scss",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/hq/organizers/show.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/hq/projects_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/hq/organizers/index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/hq/projects/index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/models/organizer.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/partials/_hq_nav.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/hq/organizers_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/hq/projects/new.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/hq/dashboard/_overview.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/vendor/assets/stylesheets/bootstrap4/_custom_variables.scss",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizer/dashboard/_login.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/assets/stylesheets/hq.scss",
+		"/C/Users/alex/Google Drive/yellowings/dev/vendor/assets/stylesheets/bootstrap4/bootstrap.scss",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/models/admin.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizer/dashboard/_overview.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizer/dashboard_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizer/projects/edit.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizer_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizer/projects_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/hq/sponsor_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/hq/index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/hq/dashboard/_index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/hq_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/hq/dashboard_controller.rb",
+		"/C/Users/alex/Documents/b2match/app/controllers/admin/admin_controller.rb",
+		"/C/Users/alex/Documents/b2match/app/controllers/admin/activities_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/projects/new.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/assets/stylesheets/projects.scss",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/projects/index.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/projects_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/db/migrate/20151020165208_create_projects_sponsors_join_table.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/db/migrate/20151014192754_create_admins.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/layouts/application.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/partials/_device_notifications.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/db/migrate/20151016120859_create_projects.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/db/migrate/20151014192744_create_sponsors.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/models/sponsor.rb",
+		"/C/Users/alex/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/alex/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/alex/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/alex/Documents/My Games/FasterThanLight/ae_prof.sav",
+		"/C/Users/alex/Documents/My Games/FasterThanLight/New folder/continue.sav"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Users\\alex\\Google Drive\\yellowings\\dev",
+			"C:\\Users\\alex\\Google Drive\\yellowings\\dev\\app"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"end",
+			"alexkhalevine",
+			"RAILS_ENV",
+			"Helvetica",
+			"h1",
+			"_path",
+			", "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/views/organizers/projects/edit.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								575,
+								575
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ERB Autocomplete/erb.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/organizers/projects/show.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1032,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								623,
+								623
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ERB Autocomplete/erb.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/controllers/organizers/projects_controller.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1001,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "yellowings.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"schema",
+				"db\\schema.rb"
+			],
+			[
+				"sche",
+				"db\\schema.rb"
+			],
+			[
+				"schem",
+				"db\\schema.rb"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			],
+			[
+				"gemf",
+				"Gemfile"
+			],
+			[
+				"routes",
+				"config\\routes.rb"
+			],
+			[
+				"seed",
+				"db\\seeds.rb"
+			],
+			[
+				"gem",
+				"Gemfile"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 312.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
