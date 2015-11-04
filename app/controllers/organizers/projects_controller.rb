@@ -25,7 +25,8 @@ module Organizers
     def delete_asset
       @target_asset=ProjectAsset.find(params[:id])
       @target_asset.destroy
-      redirect_to organizers_project_path(current_organizer.project.id)
+      #redirect_to organizers_project_path(current_organizer.project.id)
+      redirect_to(:back)
     end
 
     def delete_all_assets

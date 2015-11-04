@@ -5,7 +5,6 @@ class CreateProjectAssets < ActiveRecord::Migration
       t.string :title
       t.string :media_type
       t.string :media
-
       t.timestamps null: false
     end
   end

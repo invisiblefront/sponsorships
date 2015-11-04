@@ -1,2 +1,22 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<h1><%=  @project.title %> </h1>
+<hr>
+
+<ul class="list-group">
+	<% @project.project_assets.each do |media_asset| %>
+	  <li class="list-group-item row">
+	  	<div class="col-md-3">
+	  		<%= image_tag(media_asset.media, height: '100', width: '100', class:"pull-left") %>
+	  	</div>
+	  	<div class="col-md-3">
+	  		<%= media_asset.media_type %>
+	  	</div>
+	  	<div class="col-md-3">
+	  		<%= media_asset.title %>
+	  	</div>
+	  	<div class="col-md-3">
+	  		<a href="<%= media_asset.media %>" class="btn btn-sm btn-info"  data-lightbox="image-1" data-title="<%= media_asset.title %>">View full sized</a>
+	  		<%= link_to "Delete Asset",  organizers_path(media_asset), method: :delete, class:"btn btn-sm btn-danger"  %>
+	  	</div>
+	  </li>
+	<% end %>
+</ul>
