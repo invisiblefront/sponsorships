@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029133543) do
+ActiveRecord::Schema.define(version: 20151104173736) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",                   limit: 255,              null: false
@@ -52,12 +52,13 @@ ActiveRecord::Schema.define(version: 20151029133543) do
   add_index "organizers", ["reset_password_token"], name: "index_organizers_on_reset_password_token", unique: true, using: :btree
 
   create_table "project_assets", force: :cascade do |t|
-    t.integer  "project_id", limit: 4
-    t.string   "title",      limit: 255
-    t.string   "media_type", limit: 255
-    t.string   "media",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "project_id",           limit: 4
+    t.integer  "subscription_type_id", limit: 4
+    t.string   "title",                limit: 255
+    t.string   "media_type",           limit: 255
+    t.string   "media",                limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "projects", force: :cascade do |t|
@@ -75,6 +76,8 @@ ActiveRecord::Schema.define(version: 20151029133543) do
   add_index "projects_sponsors", ["project_id", "sponsor_id"], name: "index_projects_sponsors_on_project_id_and_sponsor_id", using: :btree
 
   create_table "sponsors", force: :cascade do |t|
+    t.string   "name",                   limit: 255,              null: false
+    t.integer  "subscription_type_id",   limit: 4
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.string   "email",                  limit: 255, default: "", null: false
@@ -91,5 +94,11 @@ ActiveRecord::Schema.define(version: 20151029133543) do
 
   add_index "sponsors", ["email"], name: "index_sponsors_on_email", unique: true, using: :btree
   add_index "sponsors", ["reset_password_token"], name: "index_sponsors_on_reset_password_token", unique: true, using: :btree
+
+  create_table "subscription_types", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
 end

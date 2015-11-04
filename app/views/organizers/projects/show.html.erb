@@ -1,28 +1,33 @@
 <h1><%= @my_project.title %></h1>
-	<%= link_to "Add Media",  edit_organizers_project_path(current_organizer.project.id), class:"btn btn-warning" %>
 
+<%= link_to "Add Media",  edit_organizers_project_path(current_organizer.project.id), class:"btn btn-warning" %>
 <% if @my_project.project_assets.size>0 %>
-	<%= link_to "Delete All Assets",  organizers_delete_assets_path, method: :delete, class:"btn btn-danger"  %>
+<%= link_to "Delete All Assets",  organizers_delete_assets_path, method: :delete, class:"btn btn-danger"  %>
 <% end %>
 
 <hr>
 
-<ul class="list-group">
-	<% @my_project.project_assets.each do |media_asset| %>
-	  <li class="list-group-item row">
-	  	<div class="col-md-3">
-	  		<%= image_tag(media_asset.media, height: '100', width: '100', class:"pull-left") %>
-	  	</div>
-	  	<div class="col-md-3">
-	  		<%= media_asset.media_type %>
-	  	</div>
-	  	<div class="col-md-3">
-	  		<%= media_asset.title %>
-	  	</div>
-	  	<div class="col-md-3">
-	  		<a href="<%= media_asset.media %>" class="btn btn-sm btn-info"  data-lightbox="image-1" data-title="<%= media_asset.title %>">View full sized</a>
-	  		<%= link_to "Delete Asset",  organizers_path(media_asset), method: :delete, class:"btn btn-sm btn-danger"  %>
-	  	</div>
-	  </li>
-	<% end %>
-</ul>
+<div class="table-responsive">
+	<table class="table table-striped">
+		<tr>
+			<th>Thumbnail</th>
+			<th>Title</th>
+			<th>Create at</th>
+			<th>Subscription type required</th>
+			<th>Action</th>
+		</tr>
+		<% @my_project.project_assets.each do |media_asset| %>
+		<tr>
+			<td>
+				<a href="<%= media_asset.media %>" data-lightbox="image-1" data-title="<%= media_asset.title %>">
+					<%= image_tag(media_asset.media, height: '50', width: '50', class:"pull-left") %>
+				</a>
+			</td>
+			<td><%= media_asset.title %></td>
+			<td><%= media_asset.created_at %></td>
+			<td><%= media_asset.subscription_type.title %></td>
+			<td><%= link_to "Delete Asset",  organizers_path(media_asset), method: :delete, class:"btn btn-sm btn-danger"  %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>

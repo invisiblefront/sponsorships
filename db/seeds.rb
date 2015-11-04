@@ -15,3 +15,12 @@ organizer.save!
 
 project = Project.create(title:"First project of peter",  organizer_id: '1')
 project.save!
+
+subscription_type_1 = SubscriptionType.create(title:"bronze")
+subscription_type_1.save!
+
+subscription_type_2 = SubscriptionType.create(title:"silver")
+subscription_type_2.save!
+
+subscription_type_3 = SubscriptionType.create(title:"gold")
+subscription_type_3.save!

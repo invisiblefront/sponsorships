@@ -18,8 +18,9 @@ module Organizers
       if @new_asset.save!
         redirect_to organizers_project_path(project_asset_params[:project_id])
       else
-        render plain: "error"
+        redirect_to edit_organizers_project_path(current_organizer.project.id)
       end 
+
     end
 
     def delete_asset
@@ -36,7 +37,7 @@ module Organizers
 
     private
     def project_asset_params
-      params.require(:project_asset).permit(:project_id, :title, :media_type, :media)
+      params.require(:project_asset).permit(:project_id, :title, :subscription_type_id, :media_type, :media)
     end
   end
 end

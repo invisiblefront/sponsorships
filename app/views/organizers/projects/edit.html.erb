@@ -1,7 +1,17 @@
-<h3>Add media</h3>	
+<h1>Add media</h1>	
+
+<% if @new_asset.errors.full_messages.any? %>
+<% @new_asset.errors.full_messages.each do |error_message| %>
+<%= error_message if @new_asset.errors.full_messages.first == error_message %> <br />
+<% end %>
+<% end %>
+
+
 <div class="row">
 	<div class="col-md-6 col-sm-12">
 		<%= form_for(@new_asset, url: organizers_project_asset_path) do |f| %>
+			<%= f.error_messages %>
+
 		    <%= f.hidden_field :project_id, :value => current_organizer.project.id %>
 
 		  <fieldset class="form-group">
@@ -10,12 +20,23 @@
 		  </fieldset>
 
 		  <fieldset class="form-group">
+		  <h4>Media type</h4>	
 		 	<label class="radio-inline">
 			  <%= radio_button("project_asset", "media_type", "image") %> Image
 			</label>
 		 	<label class="radio-inline">
 			  <%= radio_button("project_asset", "media_type", "video") %> Video
 			</label>
+		  </fieldset>
+
+		  <fieldset class="form-group">
+		  <h4>Subscription type</h4>	 				
+		  <% SubscriptionType.all.each do |subscription_type| %>
+		 	<label class="radio-inline">
+			  <%= radio_button("project_asset", "subscription_type_id", subscription_type.id) %> <%= subscription_type.title %>
+			</label>
+		  <% end %>
+
 		  </fieldset>
 
 		  <fieldset class="form-group">
