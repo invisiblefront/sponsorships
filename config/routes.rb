@@ -8,15 +8,14 @@ Rails.application.routes.draw do
   
 
   devise_for :organizers
-  devise_for :sponsors
+  devise_for :sponsors, :controllers => { registrations: 'registrations' }
   devise_for :admins
 
+
+
+
+
   resources :admin
-
-
- # authenticated :admin do
- #   root to: 'hq#index', as: :authenticated_root
- # end
 
   get 'hq' => 'hq#index'
   namespace :hq do

@@ -13,11 +13,14 @@ class ApplicationController < ActionController::Base
   end
 
 
-  before_action :configure_permitted_parameters, if: :devise_controller?
-  protected
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name
-  end
+  # before_action :configure_permitted_parameters, if: :devise_controller?
+  # protected
+  # def configure_permitted_parameters
+  #   devise_parameter_sanitizer.for(:sign_up) << :name
+  #   devise_parameter_sanitizer.for(:sign_up) << :subscription_type_id
+  #   devise_parameter_sanitizer.for(:sign_up) << :project_ids
+  # end
+
 
 
 end

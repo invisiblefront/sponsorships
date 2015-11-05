@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104173736) do
+ActiveRecord::Schema.define(version: 20151105165237) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",                   limit: 255,              null: false
@@ -61,6 +61,13 @@ ActiveRecord::Schema.define(version: 20151104173736) do
     t.datetime "updated_at",                       null: false
   end
 
+  create_table "project_sponsorships", force: :cascade do |t|
+    t.integer  "project_id", limit: 4
+    t.integer  "sponsor_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "title",        limit: 255, null: false
     t.string   "description",  limit: 255
@@ -69,13 +76,6 @@ ActiveRecord::Schema.define(version: 20151104173736) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
-
-  create_table "projects_sponsors", id: false, force: :cascade do |t|
-    t.integer "project_id", limit: 4
-    t.integer "sponsor_id", limit: 4
-  end
-
-  add_index "projects_sponsors", ["project_id", "sponsor_id"], name: "index_projects_sponsors_on_project_id_and_sponsor_id", using: :btree
 
   create_table "sponsors", force: :cascade do |t|
     t.string   "name",                   limit: 255,              null: false
