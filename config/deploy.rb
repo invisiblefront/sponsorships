@@ -30,7 +30,6 @@ namespace :deploy do
   task :stop do ; end
 
   task :start do
-    execute :sudo, "kill $(sudo lsof -t -i:4000)"
     run "passenger start /var/www/yellowings_mc/current -a 151.236.10.206 -p 4000 -d -e production"
   end
 
