@@ -44,7 +44,7 @@ namespace :deploy do
       kill $(sudo lsof -t -i:4000);
     CMD
 
-    run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
+    run "passenger start /var/www/yellowings_mc/current -a 151.236.10.206 -p 4000 -d -e production"
     end
   end
 end
