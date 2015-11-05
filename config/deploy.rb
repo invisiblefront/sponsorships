@@ -37,16 +37,11 @@ namespace :deploy do
     end
   end
 
-
-
    task :restart do
     on roles(:web) do
 
     run <<-CMD
-      if [[ -f #{current_path}/tmp/pids/passenger.#{passenger_port}.pid ]];
-      then
-        cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port};
-      fi
+      cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port};
     CMD
 
     run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
