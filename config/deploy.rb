@@ -12,7 +12,7 @@ set :pty, false
 set :format, :pretty
 set :user,   "root"
 set :port, 4000
-set :passenger_restart_with_sudo, true
+set :passenger_restart_with_sudo, false
 set :linked_dirs, %w(public/uploads)
 set :shared_path, "#{fetch(:deploy_to)}/shared"
 set :sidekiq_monit_use_sudo, false
