@@ -18,8 +18,8 @@ set :shared_path, "#{fetch(:deploy_to)}/shared"
 set :sidekiq_monit_use_sudo, false
 
 set :rails_env,      "production"
-set :passenger_port, 4000
-set :passenger_cmd,  "passenger"
+#set :passenger_port, 4000
+#set :passenger_cmd,  "passenger"
 
 
 namespace :deploy do
