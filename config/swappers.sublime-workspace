@@ -47,10 +47,6 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/alex/Projects/swappers"
-	],
 	"file_history":
 	[
 	],
@@ -103,8 +99,8 @@
 						"selection":
 						[
 							[
-								95,
-								95
+								96,
+								96
 							]
 						],
 						"settings":
@@ -176,12 +172,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Projects/yellowings_mc/config/yellowings_mc.sublime-workspace"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{

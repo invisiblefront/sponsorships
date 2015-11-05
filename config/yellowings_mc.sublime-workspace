@@ -7,22 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "database.yml",
-			"settings":
-			{
-				"buffer_size": 513,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/alex/Projects/yellowings_mc/Gemfile",
-			"settings":
-			{
-				"buffer_size": 1697,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -55,13 +39,14 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/alex/Projects/yellowings_mc",
-		"/home/alex/Projects/yellowings_mc/config"
-	],
 	"file_history":
 	[
+		"/home/alex/Projects/yellowings_mc/config/deploy.rb",
+		"/home/alex/Projects/yellowings_mc/.gitignore",
+		"/home/alex/Projects/yellowings_mc/config/database.yml",
+		"/home/alex/Projects/yellowings_mc/Gemfile",
+		"/home/alex/Projects/yellowings_mc/config/deploy/production.rb",
+		"/home/alex/Projects/yellowings_mc/Capfile"
 	],
 	"find":
 	{
@@ -96,67 +81,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "database.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 513,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								478,
-								478
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/alex/Projects/yellowings_mc/Gemfile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1697,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1554,
-								1554
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 306.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -166,7 +92,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -213,12 +139,16 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Projects/yellowings_mc/config/swappers.sublime-workspace"
+			]
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{

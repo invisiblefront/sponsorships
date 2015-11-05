@@ -11,7 +11,7 @@ set :branch, 'master'
 set :pty, false
 set :format, :pretty
 set :user,   "root"
-set :port, 80
+set :port, 4000
 set :passenger_restart_with_sudo, true
 set :linked_dirs, %w(public/uploads)
 set :shared_path, "#{fetch(:deploy_to)}/shared"
