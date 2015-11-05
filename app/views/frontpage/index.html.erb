@@ -10,11 +10,16 @@
 	<% @projects.each do |project| %>
 		<div class="col-md-4">
 		    <div class="card">
-		      <%= image_tag(project.banner, class:"card-img-top",style:"width:100%") %>
+		      <% if project.banner.present? %>
+		      	<%= image_tag(project.banner, class:"card-img-top",style:"width:100%") %>
+		      <% else %>
+		      	<%= image_tag("project_placeholder.jpg", class:"card-img-top",style:"width:100%") %>
+		      <% end %>
+
 		      <div class="card-block">
 		        <h4 class="card-title"><%= project.title %></h4>
 		        <p class="card-text" style="word-break: break-all"><%= project.description %></p>
-		        <%= link_to("Back this project", sponsor_path , class:"btn btn-primary") %>
+		        <%= link_to("Back this project", sponsor_path(id:project.id) , class:"btn btn-primary") %>
 		      </div>
 		    </div>
 		</div>

@@ -1,22 +1,68 @@
+<h1>Hi!</h1>  
+<p>Nice that you are interested in funding of <%= Project.find(params[:id]).title %></p>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>1. Lets choose your reward:</h3>
+        <ul class="list-group">
+            <% @subscription_types.each do |subscription_type| %>
+                <li class="list-group-item">
+                    <label class="radio-inline">
+                      <%= radio_button("project_asset", "subscription_type_id", subscription_type.id) %> <%= subscription_type.title.capitalize  %>
+                    </label>
+                    <span class="label label-default label-pill pull-right"><%= subscription_type.price  %> euro / month</span>
 
-<%= form_for(:sponsor, :url => registration_path(:sponsor), html:{class:"form-signin"}) do |f| %>
-  <h2 class="form-signin-heading">Please sign up</h2>
+                </li>
+            <% end %>
+        </ul>  
+    </div>
+</div><br>
 
-    <label for="name" class="sr-only">Email address</label>
-    <%= f.text_field :name, class:"form-control", placeholder:"Name" %><br>
+<hr>
 
-    <label for="email" class="sr-only">Email address</label>
-    <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email address" %>
 
-    <label for="password" class="sr-only">Password</label>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>
-    <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password" %>
+<div class="row" id="sponsor-register-form">
+    <div class="col-md-6">
+        <%= form_for(:sponsor, :url => registration_path(:sponsor), html:{class:"form"}) do |f| %>
+          <h3>2. And now lets sign up!</h3>  
 
-    <label for="password_confirmation" class="sr-only">Password confirmation</label>
-    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirm password" %>
+            <label for="name" class="sr-only">Email address</label>
+            <%= f.text_field :name, class:"form-control", placeholder:"Name" %><br>
 
-    <%= f.submit "Sign up", class:"btn btn-lg btn-info btn-block" %>
+            <label for="email" class="sr-only">Email address</label>
+            <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email address" %><br>
 
-<% end %>
+            <label for="password" class="sr-only">Password</label>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password" %><br>
+
+            <label for="password_confirmation" class="sr-only">Password confirmation</label>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirm password" %><br>
+
+            <%= f.hidden_field :subscription_type_id %><br>
+
+            <%= f.submit "Sign up", class:"btn btn-lg btn-info btn-block" %>
+
+        <% end %>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        // only show reg form if reward is selected!
+
+        $(".list-group input").change(function(){
+            $("#sponsor_subscription_type_id").val($(this).val());
+
+            $("#sponsor-register-form").show();
+
+        })
+
+        /*$("#sponsor_subscription_type_id").val(1);*/
+
+    })
+
+</script>

@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20151104173736) do
 
   create_table "subscription_types", force: :cascade do |t|
     t.string   "title",      limit: 255
+    t.string   "price",      limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
