@@ -30,6 +30,7 @@ namespace :deploy do
   task :stop do ; end
 
   task :start do
+    #run "$(sudo lsof -t -i:4000)"
     run "passenger start /var/www/yellowings_mc/current/ -a 151.236.10.206 -p 4000 -d -e production"
   end
 
@@ -50,7 +51,7 @@ end
 
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
+      run "passenger start /var/www/yellowings_mc/current/ -a 151.236.10.206 -p 4000 -d -e production"
     end
   end
 
