@@ -41,7 +41,7 @@ namespace :deploy do
     on roles(:web) do
 
     run <<-CMD
-      cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port};
+      kill $(sudo lsof -t -i:4000);
     CMD
 
     run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
