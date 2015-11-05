@@ -19,8 +19,8 @@ set :sidekiq_monit_use_sudo, false
 
 set :rails_env,      "production"
 set :passenger_port, 4000
-set :passenger_cmd,  "passenger"
-
+set :passenger_cmd,  "#{bundle_cmd} exec passenger"
+set :rails_env, "production"
 
 namespace :deploy do
   task :start, :roles => :app, :except => { :no_release => true } do
