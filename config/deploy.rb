@@ -27,13 +27,13 @@ namespace :deploy do
   task :start do
     on roles(:web) do
       #run "ls"
-      #run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
+      run "kill $(sudo lsof -t -i:4000);"
     end
   end
 
   task :stop do
     on roles(:web) do
-      #run "cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port}"
+      run "kill $(sudo lsof -t -i:4000);"
     end
   end
 
