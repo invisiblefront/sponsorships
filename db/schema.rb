@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20151104173736) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title",        limit: 255, null: false
+    t.string   "description",  limit: 255
+    t.string   "banner",       limit: 255
     t.integer  "organizer_id", limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false

@@ -17,22 +17,12 @@
 		</ul>
 		<% else %>
 		    <%= form_for(:organizer, url: hq_organizers_path, remote: false, html: { class: "" }) do |f| %>
-
 			  <fieldset class="form-inline">
-
-			      <%= f.label "Project name", class:"sr-only" %>
 			      <%= f.text_field :name,class:"form-control", placeholder:"Project owner name" %>
-
-			      <%= f.label "Project email", class:"sr-only" %>
 			      <%= f.email_field :email,class:"form-control", placeholder:"Project owner email" %>
-
-			      <%= f.label "Project email", class:"sr-only" %>
 			      <%= f.password_field :password, class:"form-control" %>
-
 			      <%= f.submit "Add project organizer", class:"btn btn-info-outline" %>
-
 			  </fieldset>
-
 		   <% end %>
 	   <% end %>
 
@@ -45,10 +35,14 @@
 		<h4 style="display:none">It will be called: <small></small></h4>	
 
 		<%= form_for(:project, url: hq_projects_path, remote: false, html: { class: "" }) do |f| %>
-		  
-		  <fieldset class="form-inline">
+		  <fieldset class="form" style="max-width:400px">
 		      <%= f.label "Project title", class:"sr-only" %>
-		      <%= f.text_field :title,class:"form-control", placeholder:"Project title" %>
+		      <%= f.text_field :title,class:"form-control", placeholder:"Project title" %><br>
+		      <%= f.text_field :description,class:"form-control", placeholder:"Project description" %><br>
+				<label class="file">
+				  <%= f.file_field :banner %>
+				  <span class="file-custom"></span>
+				</label>
 		      <%= f.hidden_field :organizer_id,class:"form-control" %>
 		      <button type="submit" class="btn btn-info">Create project</button>
 		  </fieldset>

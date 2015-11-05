@@ -41,7 +41,7 @@ module Hq
 
     private
     def project_params
-      params.require(:project).permit(:title, :organizer_id)
+      params.require(:project).permit(:title, :description, :banner, :organizer_id)
     end
   end
 end

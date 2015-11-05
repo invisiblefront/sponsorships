@@ -19,30 +19,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/views/organizers/projects/edit.html.erb",
-			"settings":
-			{
-				"buffer_size": 892,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/views/organizers/projects/show.html.erb",
-			"settings":
-			{
-				"buffer_size": 1032,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app/controllers/organizers/projects_controller.rb",
-			"settings":
-			{
-				"buffer_size": 1001,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -79,30 +55,19 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/C/Users/alex/Google Drive/yellowings/dev",
-		"/C/Users/alex/Google Drive/yellowings/dev/app",
-		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers",
-		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizers",
-		"/C/Users/alex/Google Drive/yellowings/dev/app/views",
-		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers",
-		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects",
-		"/C/Users/alex/Google Drive/yellowings/dev/db",
-		"/C/Users/alex/Google Drive/yellowings/dev/db/migrate"
-	],
 	"file_history":
 	[
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects/edit.html.erb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizers/projects_controller.rb",
+		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects/show.html.erb",
 		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/index.html.erb",
 		"/C/Users/alex/Google Drive/yellowings/dev/app/assets/stylesheets/application.scss",
 		"/C/Users/alex/Google Drive/yellowings/dev/config/initializers/assets.rb",
 		"/C/Users/alex/Google Drive/yellowings/dev/Gemfile",
-		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects/show.html.erb",
 		"/C/Users/alex/Google Drive/yellowings/dev/app/assets/javascripts/application.js",
 		"/C/Users/alex/Google Drive/yellowings/dev/db/migrate/20151029133543_create_project_assets.rb",
 		"/C/Users/alex/Google Drive/yellowings/dev/db/schema.rb",
 		"/C/Users/alex/Google Drive/yellowings/dev/config/routes.rb",
-		"/C/Users/alex/Google Drive/yellowings/dev/app/controllers/organizers/projects_controller.rb",
 		"/C/Users/alex/Google Drive/yellowings/dev/db/seeds.rb",
 		"/C/Users/alex/Google Drive/yellowings/dev/config/environments/production.rb",
 		"/C/Users/alex/Google Drive/yellowings/dev/config/secrets.yml",
@@ -115,7 +80,6 @@
 		"/C/Users/alex/Google Drive/yellowings/dev/openshift",
 		"/C/Users/alex/.ssh/id_rsa.pub",
 		"/C/Users/alex/Google Drive/yellowings/dev/app/views/partials/_organizer_nav.html",
-		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects/edit.html.erb",
 		"/C/Users/alex/Google Drive/yellowings/dev/app/views/organizers/projects/index.html.erb",
 		"/C/Users/alex/Google Drive/yellowings/dev/app/models/project_asset.rb",
 		"/C/Users/alex/Google Drive/yellowings/dev/app/models/project.rb",
@@ -210,96 +174,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/views/organizers/projects/edit.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 892,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								575,
-								575
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ERB Autocomplete/erb.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/views/organizers/projects/show.html.erb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1032,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								623,
-								623
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/ERB Autocomplete/erb.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/controllers/organizers/projects_controller.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1001,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								264,
-								264
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],

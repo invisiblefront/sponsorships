@@ -1,5 +1,23 @@
-<h1><%=  @project.title %> </h1>
-<hr>
+<div class="jumbotron jumbotron-fluid" style="padding-bottom:0; padding-top:20px">
+  <div class="container">
+  	<div class="row">
+	    <div class="col-md-6">
+	    	<h1 class=""><%=  @project.title %></h1>
+	    </div>
+	    <div class="col-md-6">
+	    	<%= image_tag(@project.banner, style:"width:100%;") %>
+	    </div>
+  	</div>
+  	<hr>
+  	<div class="row">
+	    <div class="col-md-12">		
+	  		<p class="lead pull-right">This is a modified jumbotron that occupies the entire horizontal space of it's parent.</p>		
+	  	</div>
+  	</div>
+  </div>
+</div>
+
+<br>
 
 <ul class="list-group">
 	<% @project.project_assets.each do |media_asset| %>
