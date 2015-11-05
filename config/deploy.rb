@@ -26,13 +26,13 @@ namespace :deploy do
 
   task :start do
     on roles(:web) do
-      run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
+      #run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
     end
   end
 
   task :stop do
     on roles(:web) do
-      run "cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port}"
+      #run "cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port}"
     end
   end
 
@@ -40,10 +40,10 @@ namespace :deploy do
     on roles(:web) do
 
     run <<-CMD
-      kill $(sudo lsof -t -i:4000);
+      #kill $(sudo lsof -t -i:4000);
     CMD
 
-    run "passenger start /var/www/yellowings_mc/current -a 151.236.10.206 -p 4000 -d -e production"
+    #run "passenger start /var/www/yellowings_mc/current -a 151.236.10.206 -p 4000 -d -e production"
     end
   end
 end
