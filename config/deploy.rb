@@ -8,7 +8,7 @@ set :keep_releases, 1
 set :deploy_to, '/var/www/yellowings_mc'
 set :deploy_via, :remote_cache
 set :branch, 'master'
-set :pty, false
+set :pty, true
 set :format, :pretty
 set :user,   "root"
 set :port, 80
