@@ -23,15 +23,25 @@ set :passenger_cmd,  "bundle exec passenger"
 set :rails_env, "production"
 
 namespace :deploy do
-  task :start, :roles => :app, :except => { :no_release => true } do
-    run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
+
+
+  task :start do
+    on roles(:web) do
+      run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
+    end
   end
 
-  task :stop, :roles => :app, :except => { :no_release => true } do
-    run "cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port}"
+  task :stop do
+    on roles(:web) do
+      run "cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port}"
+    end
   end
 
-  task :restart, :roles => :app, :except => { :no_release => true } do
+
+
+   task :restart do
+    on roles(:web) do
+
     run <<-CMD
       if [[ -f #{current_path}/tmp/pids/passenger.#{passenger_port}.pid ]];
       then
@@ -40,6 +50,7 @@ namespace :deploy do
     CMD
 
     run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
+    end
   end
 end
 
