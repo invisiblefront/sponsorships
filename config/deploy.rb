@@ -23,46 +23,23 @@ set :passenger_cmd,  "passenger"
 
 
 namespace :deploy do
-
-  desc 'Restart application'
-
-  #task :start do ; end
-  task :stop do ; end
-
-  task :start do
-    #run "$(sudo lsof -t -i:4000)"
-    #run "passenger start /var/www/yellowings_mc/current -a 151.236.10.206 -p 4000 -d -e production"
+  task :start, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
   end
 
-
-   task :symlink_uploads do
-    on roles(:app), in: :sequence, wait: 5 do
-     execute "ln -nfs #{shared_path}/public/uploads  #{release_path}/public/uploads"
-    end
-   end
-
-
-
-
- task :publishing do
- invoke 'deploy:symlink:release'
-
-end
-
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      #run "passenger start /var/www/yellowings_mc/current -a 151.236.10.206 -p 4000 -d -e production"
-    end
+  task :stop, :roles => :app, :except => { :no_release => true } do
+    run "cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port}"
   end
 
+  task :restart, :roles => :app, :except => { :no_release => true } do
+    run <<-CMD
+      if [[ -f #{current_path}/tmp/pids/passenger.#{passenger_port}.pid ]];
+      then
+        cd #{current_path} && #{passenger_cmd} stop -p #{passenger_port};
+      fi
+    CMD
 
-  #before :publishing, 'deploy:run_tests'
-  after :publishing, 'deploy:restart'
-  after :finishing, 'deploy:cleanup'
-
-  before :restart, 'deploy:symlink_uploads'
-
-  #after 'deploy:setup_config', 'nginx:reload'
-
+    run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
+  end
 end
 
