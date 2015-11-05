@@ -8,7 +8,7 @@ set :keep_releases, 1
 set :deploy_to, '/var/www/yellowings_mc'
 set :deploy_via, :remote_cache
 set :branch, 'master'
-set :pty, true
+set :pty, false
 set :format, :pretty
 set :user,   "root"
 set :port, 80
@@ -30,7 +30,7 @@ namespace :deploy do
   task :stop do ; end
 
   task :start do
-    run "passenger start /var/www/yellowings_mc/current -a 151.236.10.206 -p 4000 -d -e production"
+    run "passenger start /var/www/yellowings_mc/current/ -a 151.236.10.206 -p 4000 -d -e production"
   end
 
 
