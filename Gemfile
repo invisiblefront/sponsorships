@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.0'
 
 gem "font-awesome-rails"
 gem 'carrierwave'
-gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rails'
 gem 'capistrano-passenger'
 
 group :development, :test do
