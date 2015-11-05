@@ -24,7 +24,6 @@ set :rails_env, "production"
 
 namespace :deploy do
 
-
   task :start do
     on roles(:web) do
       run "cd #{current_path} && #{passenger_cmd} start -e #{rails_env} -p #{passenger_port} -d"
