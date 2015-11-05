@@ -1,0 +1,20 @@
+<% if sponsor_signed_in? %>
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card text-center">
+			  <div class="card-header">
+			  	<h4 class="card-title">Hi, <%= current_sponsor.name %></h4>
+			  </div>
+			  <div class="card-block">
+			    <p class="card-text">Your profile info</p>
+			    <a href="#" class="btn btn-primary">Change</a>
+			  </div>
+			</div>
+		</div>
+	</div>
+	
+
+
+<% else %>
+	<%= render partial: "sponsors/register" %>
+<% end %>

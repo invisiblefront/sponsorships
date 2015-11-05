@@ -10,11 +10,17 @@
 admin = Admin.create(name:"alex",  email: 'alex@mail.com', password:"trojan123", password_confirmation:"trojan123")
 admin.save!
 
-organizer = Organizer.create(name:"peter",  email: 'p@mail.com', password:"trojan123", password_confirmation:"trojan123")
-organizer.save!
+organizer1 = Organizer.create(name:"peter",  email: 'p@mail.com', password:"trojan123", password_confirmation:"trojan123")
+organizer1.save!
 
-project = Project.create(title:"First project of peter",  organizer_id: '1')
+organizer2 = Organizer.create(name:"lars",  email: 'l@mail.com', password:"trojan123", password_confirmation:"trojan123")
+organizer2.save!
+
+project = Project.create(title:"First project of peter",  organizer_id: '1', description:"mega long description", banner:"3a45559fc.jpg")
 project.save!
+
+project1 = Project.create(title:"Cool project of Lars",  organizer_id: '2', description:"also mega long description", banner:"T2JPtIXcxbXXXXXXXX___136509910.jpg")
+project2.save!
 
 subscription_type_1 = SubscriptionType.create(title:"bronze")
 subscription_type_1.save!

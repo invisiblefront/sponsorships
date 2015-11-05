@@ -1,0 +1,22 @@
+
+<%= form_for(:sponsor, :url => registration_path(:sponsor), html:{class:"form-signin"}) do |f| %>
+  <h2 class="form-signin-heading">Please sign up</h2>
+
+    <label for="name" class="sr-only">Email address</label>
+    <%= f.text_field :name, class:"form-control", placeholder:"Name" %><br>
+
+    <label for="email" class="sr-only">Email address</label>
+    <%= f.email_field :email, autofocus: true, class:"form-control", placeholder:"Email address" %>
+
+    <label for="password" class="sr-only">Password</label>
+    <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password" %>
+
+    <label for="password_confirmation" class="sr-only">Password confirmation</label>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirm password" %>
+
+    <%= f.submit "Sign up", class:"btn btn-lg btn-info btn-block" %>
+
+<% end %>

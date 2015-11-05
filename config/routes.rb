@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'sponsors/index'
+
   root 'frontpage#index'
 
   
@@ -35,7 +37,10 @@ Rails.application.routes.draw do
     delete 'delete_assets' => 'projects#delete_all_assets'
   end
 
-
+  get 'sponsor' => 'sponsors#index'
+  namespace :organizers do
+    resources :projects, only: [:show, :edit]
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
