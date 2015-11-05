@@ -19,7 +19,7 @@ set :sidekiq_monit_use_sudo, false
 
 set :rails_env,      "production"
 set :passenger_port, 4000
-set :passenger_cmd,  "#{bundle_cmd} exec passenger"
+set :passenger_cmd,  "bundle exec passenger"
 set :rails_env, "production"
 
 namespace :deploy do
