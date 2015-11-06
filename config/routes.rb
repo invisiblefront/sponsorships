@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     resources :dashboard, only: [:index]
     resources :organizers, only: [:index, :show, :create, :destroy]
     resources :projects, only: [:index, :show, :new, :create, :destroy]
-    resources :sponsor, only: [:index, :show]
+    resources :sponsors, only: [:index, :show]
   end
 
   get 'organizer' => 'organizers#index'

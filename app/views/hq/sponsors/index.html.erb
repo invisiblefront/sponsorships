@@ -1,0 +1,28 @@
+<h1>Sponsors</h1>
+
+<% if @sponsors.present? %>
+	<div class="table-responsive">
+	  <table class="table table-hover table-striped">
+	  		<tr>
+	  			<th>Id</th>
+	  			<th>Joined at</th>
+	  			<th>Name</th>
+	  			<th>Email</th>
+	  			<th>Backing project</th>
+	  		</tr>
+			<% @sponsors.each do |sponsor| %>
+			<tr>
+				<td><%= sponsor.id %></td>
+				<td><%= sponsor.created_at.strftime("%m/%d/%Y") %></td>
+				<td><%= sponsor.name %></td>
+				<td> <a href="mailto:<%= sponsor.email %>"><%= sponsor.email %></a></td>
+				<td><%= link_to sponsor.projects.size %></td>
+			</tr>
+			<% end %>
+	 </table>
+	</div>    
+	<% else %>
+	<div class="alert alert-info" role="alert">
+		<strong>No sponsors created</strong>
+	</div>
+<% end %>

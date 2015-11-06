@@ -1,6 +1,7 @@
 module Hq
-	class SponsorController < ApplicationController
+	class SponsorsController < ApplicationController
 	  def index
+	  	@sponsors=Sponsor.all
 	  end
 
 	  def show
