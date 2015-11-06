@@ -26,18 +26,20 @@ Rails.application.routes.draw do
   end
 
   get 'organizer' => 'organizers#index'
+
   namespace :organizers do
     resources :dashboard, only: [:index]
+    resources :sponsors, only: [:index]
     resources :projects, only: [:index, :show, :edit]
 
-    post 'project_asset' => 'projects#create_asset'
 
+    post 'project_asset' => 'projects#create_asset'
     delete '/delete_asset/:id' =>  'projects#delete_asset'
     delete 'delete_assets' => 'projects#delete_all_assets'
   end
 
   get 'sponsor' => 'sponsors#index'
-  namespace :organizers do
+  namespace :sponsors do
     resources :projects, only: [:show, :edit]
   end
 

@@ -1,0 +1,45 @@
+<h1>Hi!</h1>  
+<p>Nice that you are interested in funding of <%= Project.find(params[:id]).title %></p>
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <h3>1. Lets choose your reward:</h3>
+        <ul class="list-group">
+            <% @subscription_types.each do |subscription_type| %>
+                <li class="list-group-item">
+                    <label class="radio-inline">
+                      <%= radio_button("project_asset", "subscription_type_id", subscription_type.id) %> <%= subscription_type.title.capitalize  %>
+                    </label>
+                    <span class="label label-default label-pill pull-right"><%= subscription_type.price  %> euro / month</span>
+
+                </li>
+            <% end %>
+        </ul>  
+    </div>
+</div><br>
+
+<hr>
+
+
+<div class="row" id="sponsor-register-form">
+    <div class="col-md-6">
+    <h3>It is your first project? </h3>
+    <%= render partial: "sponsors/register" %>
+    </div>
+    <div class="col-md-6">
+    <h3>No, I am returning user </h3>
+        <%= render partial: "sponsors/login" %>
+    </div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        // only show reg form if reward is selected!
+        $(".list-group input").change(function(){
+            $("#sponsor_subscription_type_id").val($(this).val());
+
+            $("#sponsor-register-form").show();
+        })
+    })
+</script>

@@ -2,7 +2,7 @@ module Sponsors
   class ProjectsController < ApplicationController
 
     def show
-      @my_project = Project.find(params[:id])
+      @project = Project.find(params[:id])
     end
 
     def edit

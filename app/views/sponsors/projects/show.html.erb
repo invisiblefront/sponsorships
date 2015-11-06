@@ -1,1 +1,21 @@
-show
+<h1><%= @project.title %></h1>
+<hr>
+<h3><%= @project.organizer.name.capitalize %> added those assets:</h3>
+<table class="table table-responsive">
+		<thead>
+		<tr>
+			<th>at</th>
+			<th>asset</th>
+			<th>title</th>
+		</tr>
+		</thead>
+		<tbody>
+		<%  @project.project_assets.each do |media_asset| %>
+			<tr>
+				<td><%= media_asset.created_at.trftime("%m/%d/%Y") %></td>
+				<td><%= image_tag(media_asset.media, style:"width:100%") %></td>
+				<td><%= media_asset.title %></td>
+			</tr>
+		<% end %>
+		<tbody>
+</table>

@@ -1,11 +1,10 @@
-<%= form_for(:sponsor, :url => session_path(:sponsor), html:{class:"form-signin"}) do |f| %>
-  <h2 class="form-signin-heading">Please sign in</h2>
+<%= form_for(:sponsor, :url => session_path(:sponsor), html:{class:"form"}) do |f| %>
 
   <label for="inputEmail" class="sr-only">Email address</label>
-  <%= f.email_field :email, class:"form-control", placeholder:"Email address" %>
+  <%= f.email_field :email, class:"form-control", placeholder:"Email address" %><br>
 
   <label for="inputPassword" class="sr-only">Password</label>
-  <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
+  <%= f.password_field :password, class:"form-control", placeholder:"Password" %><br>
 
 	<div class="checkbox">
       <label>
