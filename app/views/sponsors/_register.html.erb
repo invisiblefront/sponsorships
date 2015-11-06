@@ -41,7 +41,8 @@
             <label for="password_confirmation" class="sr-only">Password confirmation</label>
             <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Confirm password" %><br>
 
-            <%= f.hidden_field :subscription_type_id %><br>
+            <%= f.hidden_field :subscription_type_id %>
+            <%= f.hidden_field :project_id, value:Project.find(params[:id]).id %>
 
             <%= f.submit "Sign up", class:"btn btn-lg btn-info btn-block" %>
 
