@@ -34,9 +34,12 @@ gem 'jbuilder', '~> 2.0'
 
 gem "font-awesome-rails"
 gem 'carrierwave'
+
+gem 'capistrano'
 gem 'capistrano-rails'
 gem 'capistrano-passenger'
 gem 'capistrano-bundler'
+gem 'capistrano-rails-collection'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
