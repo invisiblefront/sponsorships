@@ -3,7 +3,20 @@ require 'capistrano/setup'
 
 # Include default deployment tasks
 require 'capistrano/deploy'
+require 'capistrano/rails/collection'
 #require 'capistrano/passenger'
+
+#cap production rails:rake:log:clear
+#cap production rails:rake:tmp:clear
+#cap production rails:rake:db:drop
+#cap production rails:rake:db:reset
+#cap production rails:rake:db:setup
+#cap production rails:rake:db:seed
+#cap production rails:rake:db:migrate
+#cap production rails:rake:db:rollback
+
+
+
 
 # Include tasks from other gems included in your Gemfile
 #

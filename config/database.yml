@@ -12,7 +12,7 @@ development:
   encoding: utf8
   database: yellowings_mc
   username: root #adminRKSPcAy
-  password: 
+  password: tigertiger1985
   host: localhost
   port: 3306
 
