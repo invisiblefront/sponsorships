@@ -13,7 +13,7 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-
 //= require bootstrap4/bootstrap
 //= require lightbox
+
+//= require sponsors

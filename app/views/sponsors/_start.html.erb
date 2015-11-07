@@ -31,15 +31,3 @@
         <%= render partial: "sponsors/login" %>
     </div>
 </div>
-
-
-<script>
-    $(document).ready(function(){
-        // only show reg form if reward is selected!
-        $(".list-group input").change(function(){
-            $("#sponsor_subscription_type_id").val($(this).val());
-
-            $("#sponsor-register-form").show();
-        })
-    })
-</script>
