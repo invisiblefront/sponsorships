@@ -5,24 +5,35 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  
 </head>
 <body>
-	<div class="container">
+	<div class="yw-upper-nav-container">
+		<div class="container">
+		<nav class="navbar"> 
+		  <ul class="nav navbar-nav pull-right">
+		    <li class="nav-item">
+				<%= link_to "Login as Admin", hq_path, class:"btn btn-yellowings btn-sm"%>
+		    </li>
+		    <li class="nav-item">
+				<%= link_to "Login as Organizer", organizer_path, class:"btn btn-yellowings btn-sm"%>
+		    </li>
+		  </ul>
+		</nav>
+		</div>
+	</div>
 
+	<div class="container">
 	    <% if admin_signed_in? %>
 	    	<%= render partial:"partials/hq_nav" %>
 	    <% elsif organizer_signed_in? %>
 	    	<%= render partial:"partials/organizer_nav" %>
 	    <% elsif sponsor_signed_in? %>
 	    	<%= render partial:"partials/sponsor_nav" %><br>
+	    <% else %>
+	    	<%= render partial:"partials/lp_nav" %>
 	    <% end %>
-	    
-	    <%= render partial:"partials/device_notifications" %>
-	    
-		<%= yield %>
+	    	<%= render partial:"partials/device_notifications" %>
+			<%= yield %>
 	</div>
-	
-	
 </body>
 </html>

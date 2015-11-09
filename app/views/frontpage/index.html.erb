@@ -1,26 +1,30 @@
-<h1>Yellowings Media Center</h1>
-<p class="lead">What can you do from here:</p>
-<%= link_to "Login as Admin", hq_path, class:"btn btn-warning"%>
-<%= link_to "Login as Organizer", organizer_path, class:"btn btn-info"%>
-<hr>
-<h3>Available projects</h3>
+<div class="row">
+	<div class="col-md-12">
+		<%= image_tag("hp_jumbotron.jpg", style:"width:100%") %>
+	</div>
+</div>
 
+<div class="row" style="margin-top:90px;">
+	<div class="col-md-12">
+		<a href="#" class="btn btn-yellowings center-block">Actualle projecte</a>
+		<p class="yellow-lead">Eine komplette übersicht aller aktuell zu unterstützenden prokected von yellowings sind hier aufgelistet.</p>
+	</div>
+</div>
 
 <div class="row">
 	<% @projects.each do |project| %>
 		<div class="col-md-4">
-		    <div class="card">
-		      <% if project.banner.present? %>
-		      	<%= image_tag(project.banner, class:"card-img-top",style:"width:100%") %>
-		      <% else %>
-		      	<%= image_tag("project_placeholder.jpg", class:"card-img-top",style:"width:100%") %>
-		      <% end %>
-
-		      <div class="card-block">
+		    <div class="card yw-project-card">
+		      <a href="<%= sponsor_path(id:project.id) %>">
+			      <% if project.banner.present? %>
+			      	<%= image_tag(project.banner, class:"card-img-top",style:"width:100%") %>
+			      <% else %>
+			      	<%= image_tag("project_placeholder.jpg", class:"card-img-top",style:"width:100%") %>
+			      <% end %>
+		       </a>
+ 		      <div class="card-block">
 		        <h4 class="card-title"><%= project.title %></h4>
-		        <p class="card-text" style="word-break: break-all"><%= project.description %></p>
-		        <%= link_to("Back this project", sponsor_path(id:project.id) , class:"btn btn-primary") %>
-		      </div>
+		      </div> 
 		    </div>
 		</div>
 	<% end %>

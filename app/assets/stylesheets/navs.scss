@@ -1,0 +1,28 @@
+.navbar{
+	margin-bottom:40px;
+	margin-top:10px
+}
+
+.yw-upper-nav-container{
+	position:fixed;
+	top:0;
+	background-color:#000;
+	height:44px;
+	width:100%;
+	z-index:10000;
+
+	.navbar{
+		margin-top:0;
+		margin-bottom:0
+	}
+}
+
+.yw-lp-nav{
+	margin:0;
+	border-radius:0;
+	height:180px;
+
+	.navbar-brand{
+		margin-top: 52px
+	}
+}

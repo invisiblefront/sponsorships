@@ -20,6 +20,67 @@
 @import "font-awesome";
 @import "hq";
 
-.navbar{
-	margin-bottom:40px
+$yello_color:#ffd502;
+
+h3,h4{
+	margin-top:20px
 }
+
+.card{
+	border-radius:0
+}
+
+.card-img-top{
+	border-radius:0
+}
+
+.yw-project-card{
+
+	a:hover{
+
+	}
+
+	.card-block{
+		margin:0;
+		background-color:#000;
+		opacity: 0.8;
+
+		h4{
+			color:$yello_color;
+			margin-bottom: 0;
+			text-align: center
+		}
+
+		margin-top: -65px;
+	}
+}
+
+.yellow-lead{
+	margin-top:40px;
+	margin-bottom:40px;
+	text-transform:uppercase;
+	text-align:center
+}
+
+.btn-yellowings{
+	@extend .btn-info;
+
+	text-transform:uppercase;
+	background-color:$yello_color;
+	color:#000;
+	border-color:$yello_color;
+	font-weight:bold;
+	max-width:340px;
+	border-radius:0;
+
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+
+
+	&:hover{
+		background-color:#FFE461;
+		color:#000;
+		border-color:$yello_color;
+	}
+}
+
