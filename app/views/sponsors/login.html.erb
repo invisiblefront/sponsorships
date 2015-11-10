@@ -1,0 +1,7 @@
+<% if sponsor_signed_in? %>
+    <%= render partial: "sponsors/dashboard" %>
+<% else %>
+    <div class="center-block" style="max-width:300px">
+		<%= render partial: "sponsors/login" %>		
+	</div>
+<% end %>

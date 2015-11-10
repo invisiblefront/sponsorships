@@ -1,0 +1,24 @@
+	<h2>Projects you are backing:</h2>	
+	<hr>
+
+	<div class="row">
+
+		<div class="col-md-4">
+		<% current_sponsor.projects.each do |project| %>
+			
+			<ul class="list-group">
+			  <li class="list-group-item">
+			    <span class="pull-right">
+			    	<%= link_to "Check out (#{project.project_assets.count})", sponsors_project_path(project.id), class:"" %>
+			    </span>
+			    <%= project.title %>
+			  </li>
+			</ul>
+
+		<% end %>
+		</div>
+		<div class="col-md-8">
+
+		</div>	
+
+	</div>

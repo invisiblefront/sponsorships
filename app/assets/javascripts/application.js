@@ -14,6 +14,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap4/bootstrap
+//= require social-share-button
 //= require lightbox
-
 //= require sponsors

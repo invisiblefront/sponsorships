@@ -1,0 +1,36 @@
+		<div class="container">
+			<nav class="navbar">
+
+			  <% if sponsor_signed_in? %>	
+			  	<a class="navbar-brand" href="<%= sponsor_path %>"> <%= image_tag("yellowings_logo", style:"height:42px; margin:-11px; margin-left:-15px") %> </a> 
+  			  <% elsif organizer_signed_in? %>	
+  			  	<a class="navbar-brand" href="<%= organizer_path %>"> <%= image_tag("yellowings_logo", style:"height:42px; margin:-11px; margin-left:-15px") %> </a> 
+  			  <% elsif admin_signed_in? %>
+  			  	<a class="navbar-brand" href="<%= hq_path %>"> <%= image_tag("yellowings_logo", style:"height:42px; margin:-11px; margin-left:-15px") %> </a> 
+  			  <% end %>
+
+			  <ul class="nav navbar-nav pull-right">
+				    <% if admin_signed_in? %>
+				    	<%= link_to("Hi "+current_admin.name.capitalize+", today you are the Admin", "#", style:"color:#FFE461;margin-right:10px") %> 
+				    	<%= link_to('<i class="fa fa-sign-out"></i>Logout'.html_safe, destroy_admin_session_path, :method => :delete, class:"btn btn-yellowings btn-sm") %> 
+				    <% elsif organizer_signed_in? %>
+				    	<%= link_to("Hi "+current_organizer.name.capitalize, "#", style:"color:#FFE461;margin-right:10px") %> 
+				    	<%= link_to('<i class="fa fa-sign-out"></i>Logout'.html_safe, destroy_organizer_session_path, :method => :delete, class:"btn btn-yellowings btn-sm") %> 
+				    <% elsif sponsor_signed_in? %>
+				        <%= link_to("Hi "+current_sponsor.name.capitalize, "#", style:"color:#FFE461;margin-right:10px") %> 
+				    	<%= link_to('<i class="fa fa-sign-out"></i>Logout'.html_safe, destroy_sponsor_session_path, :method => :delete, class:"btn btn-yellowings btn-sm") %> 
+				    <% else %>
+					    <li class="nav-item">
+							<%= link_to "Login as Admin", hq_path, class:"btn btn-yellowings btn-sm"%>
+					    </li>
+					    <li class="nav-item">
+							<%= link_to "Login as Organizer", organizer_path, class:"btn btn-yellowings btn-sm"%>
+					    </li>
+					    <li class="nav-item">
+							<%= link_to "Login as Sponsor", sponsor_login_path, class:"btn btn-yellowings btn-sm"%>
+					    </li>
+				    <% end %>
+			  </ul>
+
+			</nav>
+		</div>

@@ -32,13 +32,14 @@ Rails.application.routes.draw do
     resources :sponsors, only: [:index]
     resources :projects, only: [:index, :show, :edit]
 
-
     post 'project_asset' => 'projects#create_asset'
     delete '/delete_asset/:id' =>  'projects#delete_asset'
     delete 'delete_assets' => 'projects#delete_all_assets'
   end
 
   get 'sponsor' => 'sponsors#index'
+  get 'sponsor/login' => 'sponsors#login'
+  
   namespace :sponsors do
     resources :projects, only: [:show, :edit]
   end
