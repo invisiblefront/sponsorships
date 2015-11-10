@@ -15,7 +15,7 @@
       <div class="timeline-panel">
         <div class="timeline-heading">
           <h4 class="timeline-title"><%= media_asset.title.capitalize %></h4>
-          <% @image_path = request.domain+media_asset.media.url %>
+          <% @image_path = "#{request.domain}+#{media_asset.media.url}" %>
           <%= social_share_button_tag(@project.title, :url => request.domain, :image =>@image_path, desc: media_asset.title, via: "Yellowings") %>
           <p><small class="text-muted"><%= @project.organizer.name.capitalize %> added <%= time_ago_in_words(media_asset.created_at) %> ago</small></p>
         </div>
